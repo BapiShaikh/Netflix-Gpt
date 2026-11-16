@@ -2,6 +2,12 @@
 
 -- netflix gpt
 
+- create vite app
+- configure Tailwindcss
+- header
+- Login Form
+- sign up form
+
 # features
 
 - login or Signup page
