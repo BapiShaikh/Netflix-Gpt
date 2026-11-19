@@ -4,15 +4,15 @@ import { checkValidData } from '../utils/validate'
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile  } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import {addUser} from "../utils/userSlice"
+import { USER_AVATAR } from '../utils/constant';
 
 
 
 const Login = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
+  
   const [isSignInForm,setIsSignInForm] = useState(true)
   const [errorMessage,setErrorMessage] = useState(null)
   const name = useRef(null)
@@ -36,12 +36,12 @@ const Login = () => {
         const user = userCredential.user;
 
         updateProfile(user, {
-  displayName: name.current.value, photoURL: "https://media.licdn.com/dms/image/v2/D5603AQEttsx7mUCXRA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1703655034284?e=1796256000&v=beta&t=PsPzjPyYsaXx6V48VygiWZ9LMxLmE1gVnYHhU8if3n8"
+  displayName: name.current.value, photoURL:{USER_AVATAR}
 }).then(() => {
   // Profile updated!
   const {uid,email,displayName,photoURL} = auth.currentUser;
       dispatch(addUser({uid:uid, email:email, displayName:displayName,photoURL:photoURL}));
-  navigate("/browse")
+  
    
   // ...
 }).catch((error) => {
@@ -68,8 +68,7 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            console.log(user);
-            navigate("/browse")
+            
             
             // ...
           })
