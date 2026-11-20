@@ -33,6 +33,12 @@
 - uptade store with trailervideo data
 - embded the youtube video and make it autoplay and mute
 - added tailwen class make main container look awsom
+- build the secondary component
+  -built the movies list
+- build movies card
+- TMDB Image CDN url
+- made the bouwese page amagine with tailwen css
+- usePopularMovies Custom hook
 
 # features
 
