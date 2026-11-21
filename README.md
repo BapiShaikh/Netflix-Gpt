@@ -39,6 +39,9 @@
 - TMDB Image CDN url
 - made the bouwese page amagine with tailwen css
 - usePopularMovies Custom hook
+- GPT Search Page
+  -Gpt Search Bar
+- added Multi-Language Feature in our app
 
 # features
 
